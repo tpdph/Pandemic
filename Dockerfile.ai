@@ -1,0 +1,23 @@
+# AI Service Dockerfile
+# Use python:3.10-slim as base
+FROM python:3.10-slim AS base
+
+# Common system dependencies
+RUN apt-get update && apt-get install -y --no-install-recommends \
+    build-essential \
+    ffmpeg && \
+    rm -rf /var/lib/apt/lists/*
+
+WORKDIR /app
+COPY requirements.txt .
+RUN pip install --no-cache-dir -r requirements.txt
+
+# AI specific stage
+FROM base AS ai
+
+# Copy application code
+COPY ai-service/ .
+
+# Expose port and start application
+EXPOSE 5000
+CMD ["python", "app.py"]

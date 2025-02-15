@@ -5,16 +5,22 @@ We welcome contributions to the Pandemic project! This document outlines the gui
 ## Getting Started
 
 1. **Fork the Repository**: Create a fork of the Pandemic repository on GitHub.
+
 2. **Clone the Repository**: Clone your forked repository to your local machine:
+
    ```bash
    git clone https://github.com/your-username/Pandemic.git
    ```
+
 3. **Install Dependencies**: Install all required dependencies:
+
    ```bash
    npm install
    pip install -r ai-service/requirements.txt
    ```
+
 4. **Build the Project**: Build the Docker images:
+
    ```bash
    docker-compose build
    ```
@@ -39,11 +45,15 @@ We welcome contributions to the Pandemic project! This document outlines the gui
 ## Branch Strategy
 
 1. **Main Branch**: The main branch is used for production-ready code.
+
 2. **Feature Branches**: Create feature branches for new features:
+
    ```bash
    git checkout -b feature/your-feature-name
    ```
+
 3. **Bug Fix Branches**: Create bug fix branches for fixes:
+
    ```bash
    git checkout -b fix/your-fix-name
    ```
@@ -51,10 +61,13 @@ We welcome contributions to the Pandemic project! This document outlines the gui
 ## Pull Request Process
 
 1. **Create a Pull Request**:
+
    - Push your feature branch to your forked repository:
+
      ```bash
      git push origin feature/your-feature-name
      ```
+
    - Create a Pull Request against the main repository's main branch.
 
 2. **Review Process**:
@@ -65,6 +78,7 @@ We welcome contributions to the Pandemic project! This document outlines the gui
 3. **After Merge**:
    - Delete your feature branch
    - Update your local main branch:
+   
      ```bash
      git pull origin main
      ```

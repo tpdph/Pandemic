@@ -153,10 +153,40 @@ Error responses include a JSON object with error details:
 ```
 
 ## Authentication
-The API uses JWT-based authentication. Include a valid JWT token in the `Authorization` header for protected endpoints:
+
+### Login Endpoint
+
+```
+POST /auth/login
+```
+
+**Request Body:**
+```json
+{
+  "username": "string",
+  "password": "string"
+}
+```
+
+**Response:**
+```json
+{
+  "access_token": "string",
+  "expires_in": "number",
+  "token_type": "Bearer"
+}
+```
+
+### Token Usage
+Include the received token in the `Authorization` header for protected endpoints:
 ```
 Authorization: Bearer <your_token_here>
 ```
+
+### Security Considerations
+- Tokens expire after 1 hour
+- Implement token refresh mechanism
+- Use HTTPS for all authentication requests
 
 ## Rate Limits
 The API implements rate limiting to prevent abuse. The default rate limit is 100 requests per minute. Contact the system administrator to request higher limits if needed.
