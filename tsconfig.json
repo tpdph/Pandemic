@@ -1,0 +1,24 @@
+{
+  "compilerOptions": {
+    "target": "ES2020",
+    "lib": ["ES2020", "DOM"],
+    "module": "CommonJS",
+    "outDir": "./dist",
+    "rootDir": "./",
+    "strict": true,
+    "noImplicitAny": true,
+    "esModuleInterop": true,
+    "skipLibCheck": true,
+    "moduleResolution": "node",
+    "baseUrl": ".",
+    "paths": {
+      "*": ["./*", "src/*"],
+      "@nestjs/common": ["node_modules/@nestjs/common"],
+      "@sentry/node": ["node_modules/@sentry/node/types"]
+    },
+    "experimentalDecorators": true,
+    "emitDecoratorMetadata": true
+  },
+  "include": ["**/*.ts", "backend/src/types.d.ts", "backend/src/runway.d.ts", "backend/src/elevenlabs.d.ts", "backend/src/ffmpeg.d.ts"],
+  "exclude": ["node_modules"]
+}
